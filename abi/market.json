@@ -1,0 +1,229 @@
+[
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "getOffer",
+    "outputs": [
+      {
+        "components": [
+          {"internalType": "uint256", "name": "pointsId", "type": "uint256"},
+          {"internalType": "address[]", "name": "fillers", "type": "address[]"},
+          {"internalType": "uint256[]", "name": "fillAmounts", "type": "uint256[]"},
+          {"internalType": "uint256", "name": "filledAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "expectedMintedAmount", "type": "uint256"},
+          {"internalType": "uint8", "name": "status", "type": "uint8"},
+          {"internalType": "uint256", "name": "pointsAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "tokenAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "price", "type": "uint256"},
+          {"internalType": "uint256", "name": "collateralAmount", "type": "uint256"},
+          {"internalType": "bool", "name": "hasVesting", "type": "bool"},
+          {"internalType": "uint256", "name": "createdAt", "type": "uint256"},
+          {"internalType": "bytes", "name": "account", "type": "bytes"}
+        ],
+        "internalType": "struct Market.Offer",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNextOfferId",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "pointsId", "type": "uint256"},
+      {"internalType": "bytes", "name": "account", "type": "bytes"},
+      {"internalType": "uint256", "name": "pointsAmount", "type": "uint256"},
+      {"internalType": "uint256", "name": "price", "type": "uint256"},
+      {"internalType": "uint256", "name": "collateralAmount", "type": "uint256"}
+    ],
+    "name": "createOffer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "fillOffer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "offerId", "type": "uint256"},
+      {"internalType": "uint256", "name": "amount", "type": "uint256"}
+    ],
+    "name": "fillOfferPartial",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "cancelOffer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "settleOffer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "settleOverdueOffer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "offerId", "type": "uint256"},
+      {"internalType": "uint256", "name": "chainId", "type": "uint256"},
+      {"internalType": "bytes", "name": "txhash", "type": "bytes"},
+      {"internalType": "bytes", "name": "signature", "type": "bytes"}
+    ],
+    "name": "settleOfferViaOracle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "settlePointsChange",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "offerId", "type": "uint256"}],
+    "name": "completeVestingSettlement",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getConfig",
+    "outputs": [
+      {"internalType": "address", "name": "feeRecipient", "type": "address"},
+      {"internalType": "uint256", "name": "settlementFee", "type": "uint256"},
+      {"internalType": "uint256", "name": "cancellationFee", "type": "uint256"},
+      {"internalType": "uint256", "name": "fillExtra", "type": "uint256"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "pointsId", "type": "uint256"}],
+    "name": "getMarketCollateralConfig",
+    "outputs": [
+      {
+        "components": [
+          {"internalType": "bool", "name": "enforceCollateral", "type": "bool"},
+          {"internalType": "uint16", "name": "minOfferWeightBps", "type": "uint16"},
+          {"internalType": "uint128", "name": "idealCollateralPerPoint", "type": "uint128"}
+        ],
+        "internalType": "struct Market.CollateralConfig",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "pointsId", "type": "uint256"}],
+    "name": "getSettlementDeadline",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "getUserInteractions",
+    "outputs": [
+      {"internalType": "uint8[]", "name": "actions", "type": "uint8[]"},
+      {
+        "components": [
+          {"internalType": "uint256", "name": "pointsId", "type": "uint256"},
+          {"internalType": "address[]", "name": "fillers", "type": "address[]"},
+          {"internalType": "uint256[]", "name": "fillAmounts", "type": "uint256[]"},
+          {"internalType": "uint256", "name": "filledAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "expectedMintedAmount", "type": "uint256"},
+          {"internalType": "uint8", "name": "status", "type": "uint8"},
+          {"internalType": "uint256", "name": "pointsAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "tokenAmount", "type": "uint256"},
+          {"internalType": "uint256", "name": "price", "type": "uint256"},
+          {"internalType": "uint256", "name": "collateralAmount", "type": "uint256"},
+          {"internalType": "bool", "name": "hasVesting", "type": "bool"},
+          {"internalType": "uint256", "name": "createdAt", "type": "uint256"},
+          {"internalType": "bytes", "name": "account", "type": "bytes"}
+        ],
+        "internalType": "struct Market.Offer[]",
+        "name": "offers",
+        "type": "tuple[]"
+      },
+      {"internalType": "uint256[]", "name": "offerIds", "type": "uint256[]"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "offerId", "type": "uint256"},
+      {"indexed": true, "internalType": "uint256", "name": "pointsId", "type": "uint256"},
+      {"indexed": true, "internalType": "address", "name": "maker", "type": "address"},
+      {"indexed": false, "internalType": "uint256", "name": "pointsAmount", "type": "uint256"},
+      {"indexed": false, "internalType": "uint256", "name": "price", "type": "uint256"},
+      {"indexed": false, "internalType": "uint256", "name": "collateralAmount", "type": "uint256"}
+    ],
+    "name": "OfferCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "offerId", "type": "uint256"},
+      {"indexed": true, "internalType": "address", "name": "filler", "type": "address"}
+    ],
+    "name": "OfferFilled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "offerId", "type": "uint256"},
+      {"indexed": true, "internalType": "address", "name": "filler", "type": "address"},
+      {"indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256"}
+    ],
+    "name": "OfferFilledPartial",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "offerId", "type": "uint256"}
+    ],
+    "name": "OfferCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "offerId", "type": "uint256"}
+    ],
+    "name": "OfferSettled",
+    "type": "event"
+  }
+]
