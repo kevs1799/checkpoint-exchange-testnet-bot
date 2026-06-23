@@ -2,6 +2,7 @@
 
 # Checkpoint Exchange Testnet Auto Bot
 
+
 **Multi-Wallet Automated Trading Bot for [Checkpoint Exchange](https://checkpoint.exchange/market) Testnet**
 
 ![Chain](https://img.shields.io/badge/Chain-Arbitrum%20Sepolia-2D374B?style=for-the-badge&logo=arbitrum)
