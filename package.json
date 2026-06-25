@@ -1,0 +1,19 @@
+{
+  "name": "checkpoint-bot",
+  "version": "2.0.0",
+  "description": "Checkpoint Exchange Testnet Auto Trading Bot - Multi-Wallet CommonJS",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js --strategy activity",
+    "arb": "node bot.js --strategy arb",
+    "market": "node bot.js --strategy market",
+    "sniper": "node bot.js --strategy sniper",
+    "gen": "node bot.js --gen",
+    "dry": "node bot.js --strategy activity --dry-run"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "evm_accounts": "^1.0.0",
+    "ethers": "^5.8.0"
+  }
+}
